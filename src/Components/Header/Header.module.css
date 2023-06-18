@@ -1,0 +1,33 @@
+.header {
+    height: 55px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    background-color: #0067A3;
+}
+
+.logo {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 650px) {
+    .header {
+        justify-content: right;
+    }
+    .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 350px) {
+    .header {
+        justify-content: right;
+        background-color: #0079BF;
+    }
+}

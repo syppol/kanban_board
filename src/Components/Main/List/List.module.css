@@ -1,0 +1,84 @@
+.list {
+	width: 282px;
+    height: fit-content;
+	background: #EBECF0;
+	padding: 12px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	margin-right: 24px;
+}
+
+.list:last-child {
+    margin-right: 0;
+}
+
+.listTitle {
+	margin-top: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.task {
+	background: #fff;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+	margin-top: 15px;
+	padding: 7px 8px;
+	border-radius: 5px;
+}
+
+.task:hover {
+	text-decoration: underline;
+}
+
+.taskLink {
+	text-decoration: none;
+}
+
+.addButtonActive {
+    width: 102px;
+    height: 29px;
+	background: none;
+	border: 1px solid #EBECF0;
+	appearance: none;
+    padding: 4px;
+	font-size: 18px;
+    line-height: 21px;
+    color: #5E6C84;
+    margin-top: 15px;
+}
+
+.addButtonDisabled {
+    width: 102px;
+    height: 29px;
+    border: 1px solid #EBECF0;
+    background: #EBECF0;
+    border-radius: 5px;
+    padding: 4px;
+	color: #8697b5;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.addButtonHidden {
+    display: none;
+}
+
+.addButtonActive:hover {
+    width: 102px;
+    height: 29px;
+    border: 1px solid #fff;
+    background: #fff;
+    border-radius: 5px;
+    padding: 4px;
+	color: #000000;
+    font-size: 18px;
+    line-height: 21px;
+    /* cursor: pointer;
+    box-sizing: border-box; */
+}

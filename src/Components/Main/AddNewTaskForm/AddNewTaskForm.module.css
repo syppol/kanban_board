@@ -1,0 +1,47 @@
+.submitBtn {
+    width: 102px;
+    height: 29px;
+    background: #0079BF;
+    border-radius: 5px;
+	color: #fff;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+	border: none;
+	padding: 4px 8px;
+	cursor: pointer;
+	align-self: flex-start;
+}
+
+.submitBtn:hover {
+	background: #098cd7;
+}
+
+.inputTaskNameField {
+    min-width: 242px;
+    width: auto;
+    border: none;
+    background: 
+        linear-gradient(#000, #000) center bottom 5px / calc(100% - 12px) 1px no-repeat;
+    background-color: #fff;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+	/* margin: 15px 0;
+	padding: 7px 8px; */
+	border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 7px 8px;
+}
+
+.form {
+	margin-top: 15px;
+} 
+
+.input {
+	display: block;
+	border: 1px solid #465671;
+	border-radius: 8px;
+	margin-bottom: 7px;
+	padding: 8px;
+}

@@ -1,0 +1,38 @@
+.footer {
+    height: 55px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0067A3;
+}
+
+.taskSum {
+    display: flex;
+}
+
+.author, .taskCountItem {
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.taskCountItem:last-child {
+    margin-left: 35px;
+}
+
+@media (max-width: 650px) {
+    .author {
+        display: none;
+    }
+}
+
+@media (max-width: 350px) {
+    .footer {
+        background-color: #0079BF;
+    }
+
+    .taskSum {
+        display: none;
+    }
+}
