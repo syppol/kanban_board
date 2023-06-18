@@ -20,14 +20,12 @@ const List = props => {
 
 	const formSubmit = (title) => {
 		addNewTask(title)
-        console.log(`formSubmit= ${tasks}`);
 
 		setFormVisible(false)
         setButtonVisible(!isButtonVisible)
 	}
 
     const filterTasks = (tasks) => {
-        console.log(`filterTasks= ${tasks}`);
         setButtonVisible(!isButtonVisible)
     }
 

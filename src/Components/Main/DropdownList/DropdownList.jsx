@@ -10,7 +10,6 @@ const DropdownList = props => {
     const setCommonArray = useContext(CommonArrayUpdateContext);
     const {type} = props
     const arr = commonArray.filter((task) => task.status === type);
-    console.log(`DropdownList ${arr}`);
     return (
         <select name="dropdown">
             <option value=''>Available tasks:</option>
