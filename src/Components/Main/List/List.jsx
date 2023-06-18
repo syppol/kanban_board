@@ -42,7 +42,7 @@ const List = props => {
                 <AddNewTaskForm tasks={tasks} formSubmit={formSubmit} />
             )}
             {type === LIST_TYPES.READY && isFormVisible && (
-                <DropdownList type={LIST_TYPES.BACKLOG} />
+                <DropdownList type={LIST_TYPES.BACKLOG}/>
             )}
             {type === LIST_TYPES.IN_PROGRESS && isFormVisible && (
                 <DropdownList type={LIST_TYPES.READY} />
