@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 //import css from "./DropdownList.module.css";
 //import clsx from "clsx";
+import { LIST_TYPES } from '../../../config'
+import { CommonArrayContext, CommonArrayUpdateContext } from '../../../TasksContext';
+
 
 const DropdownList = props => {
-    const {tasks, filterTasks} = props
-    const arr = tasks;
-    console.log(`filterTasks ${tasks}`);
+    const commonArray = useContext(CommonArrayContext);
+    const setCommonArray = useContext(CommonArrayUpdateContext);
+    const {type} = props
+    const arr = commonArray.filter((task) => task.status === type);
+    console.log(`DropdownList ${arr}`);
     return (
         <select name="dropdown">
             <option value=''>Available tasks:</option>

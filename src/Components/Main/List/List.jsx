@@ -44,7 +44,7 @@ const List = props => {
                     <AddNewTaskForm tasks={tasks} formSubmit={formSubmit}/>
             )}
             {type === LIST_TYPES.READY && isFormVisible && (
-                    <DropdownList tasks={tasks} filterTasks={filterTasks}/>
+                    <DropdownList type={LIST_TYPES.BACKLOG}/>
             )}
             {isButtonVisible && type === LIST_TYPES.BACKLOG && (
                     <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
