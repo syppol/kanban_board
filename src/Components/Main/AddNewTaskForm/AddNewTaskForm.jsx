@@ -16,7 +16,6 @@ const AddNewTaskForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(`handleSubmit ${tasks}`);
 
         if (values.title) {
             formSubmit(values.title)

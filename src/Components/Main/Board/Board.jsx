@@ -21,7 +21,6 @@ function Board(props) {
 		}
 		setTasks([...tasks, task]);
 		setCommonArray(tasks => [...tasks, task]);
-		console.log(commonArray);
 	}
 
 	return (

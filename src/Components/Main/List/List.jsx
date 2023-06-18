@@ -9,29 +9,29 @@ import AddNewTaskForm from '../AddNewTaskForm/AddNewTaskForm'
 import DropdownList from '../DropdownList/DropdownList'
 
 const List = props => {
-	const {type, title, tasks, addNewTask} = props;
-	const [isFormVisible, setFormVisible] = useState(false);
+    const { type, title, tasks, addNewTask } = props;
+    const [isFormVisible, setFormVisible] = useState(false);
     const [isButtonVisible, setButtonVisible] = useState(true);
 
-	const handleAddNewClick = () => {
-		setFormVisible(!isFormVisible);
+    const handleAddNewClick = () => {
+        setFormVisible(!isFormVisible);
         setButtonVisible(!isButtonVisible);
-	}
+    }
 
-	const formSubmit = (title) => {
-		addNewTask(title)
+    const formSubmit = (title) => {
+        addNewTask(title)
 
-		setFormVisible(false)
+        setFormVisible(false)
         setButtonVisible(!isButtonVisible)
-	}
+    }
 
     const filterTasks = (tasks) => {
         setButtonVisible(!isButtonVisible)
     }
 
-	return (
-		<div className={css.list}>
-			<h2 className={css.listTitle}>{title}</h2>
+    return (
+        <div className={css.list}>
+            <h2 className={css.listTitle}>{title}</h2>
             {tasks.map(task => {
                 return (
                     <div key={task.id} className={css.task}>{task.title}</div>
@@ -39,25 +39,33 @@ const List = props => {
             }
             )}
             {type === LIST_TYPES.BACKLOG && isFormVisible && (
-                    <AddNewTaskForm tasks={tasks} formSubmit={formSubmit}/>
+                <AddNewTaskForm tasks={tasks} formSubmit={formSubmit} />
             )}
             {type === LIST_TYPES.READY && isFormVisible && (
-                    <DropdownList type={LIST_TYPES.BACKLOG}/>
+                <DropdownList type={LIST_TYPES.BACKLOG} />
             )}
+            {type === LIST_TYPES.IN_PROGRESS && isFormVisible && (
+                <DropdownList type={LIST_TYPES.READY} />
+            )}
+            {type === LIST_TYPES.DONE && isFormVisible && (
+                <DropdownList type={LIST_TYPES.IN_PROGRESS} />
+            )}
+
+
             {isButtonVisible && type === LIST_TYPES.BACKLOG && (
-                    <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
+                <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
             )}
             {isButtonVisible && type === LIST_TYPES.READY && (
-                    <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
+                <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
             )}
             {isButtonVisible && type === LIST_TYPES.IN_PROGRESS && (
-                    <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
+                <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
             )}
             {isButtonVisible && type === LIST_TYPES.DONE && (
-                    <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
+                <button onClick={handleAddNewClick} className={clsx(css.addButtonActive)}>+ Add card</button>
             )}
-		</div>
-	)
+        </div>
+    )
 }
 
 export default List;
