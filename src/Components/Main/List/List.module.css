@@ -55,19 +55,17 @@
 }
 
 .addButtonDisabled {
+    pointer-events: none;
     width: 102px;
     height: 29px;
+    background: none;
     border: 1px solid #EBECF0;
-    background: #EBECF0;
-    border-radius: 5px;
+    appearance: none;
     padding: 4px;
-    color: #8697b5;
-    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 21px;
+    color: #b2c2dc;
     margin-top: 15px;
-}
-
-.addButtonHidden {
-    display: none;
 }
 
 .addButtonActive:hover {
