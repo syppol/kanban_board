@@ -2,7 +2,9 @@ import React, { useState, useContext } from "react";
 import css from "./List.module.css"
 //import { Link } from 'react-router-dom'
 import clsx from 'clsx';
-import { CommonArrayContext} from '../../../TasksContext';
+import { Link } from "react-router-dom";
+
+import { CommonArrayContext } from '../../../TasksContext';
 import { LIST_TYPES } from '../../../config'
 import AddNewTaskForm from '../AddNewTaskForm/AddNewTaskForm'
 import DropdownList from '../DropdownList/DropdownList'
@@ -45,7 +47,7 @@ const List = props => {
         }
         const commonArr = commonArray;
         let currentTasks = commonArr.filter(task => task.status === watchedType);
-        if ((type !== LIST_TYPES.BACKLOG) && (currentTasks.length === 0)){
+        if ((type !== LIST_TYPES.BACKLOG) && (currentTasks.length === 0)) {
             return css.addButtonDisabled;
         }
         return css.addButtonActive;
@@ -56,7 +58,11 @@ const List = props => {
             <h2 className={css.listTitle}>{title}</h2>
             {tasks.map(task => {
                 return (
-                    <div key={task.id} className={css.task}>{task.title}</div>
+                    <div key={task.id} className={css.task}>
+                        <Link to={`/task/${task.id}`}>{task.title}</Link>
+
+                    </div>
+
                 )
             }
             )}
