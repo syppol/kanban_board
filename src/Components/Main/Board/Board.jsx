@@ -1,4 +1,4 @@
-import React, { useContext,useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { LIST_TYPES, LIST_COPY } from "../../../config";
 import uniqid from 'uniqid';
 import List from "../List/List";
@@ -8,20 +8,11 @@ import { CommonArrayContext, CommonArrayUpdateContext } from '../../../TasksCont
 
 function Board(props) {
 	const { tasks, setTasks } = props;
-	const commonArray = useContext(CommonArrayContext);
 	const setCommonArray = useContext(CommonArrayUpdateContext);
-  
+	const commonArray = useContext(CommonArrayContext);
+
 	useEffect(() => {
-		const savedState = localStorage.getItem('appContextState');
-		if (savedState) {
-		  console.log(JSON.stringify(savedState));
-		  setCommonArray(JSON.parse(savedState));
-		}
-	  }, []);
-	  
-	  useEffect(() => {
-		localStorage.setItem('appContextState', JSON.stringify(commonArray));
-	  }, [commonArray]);
+	}, [commonArray]);
 
 	const addNewTask = (title) => {
 		const task = {
