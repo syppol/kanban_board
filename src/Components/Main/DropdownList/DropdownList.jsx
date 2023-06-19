@@ -5,18 +5,20 @@ import { LIST_TYPES } from '../../../config'
 import { CommonArrayContext, CommonArrayUpdateContext } from '../../../TasksContext';
 
 
-const DropdownList = props => {
+const DropdownList = (props) => {
     const commonArray = useContext(CommonArrayContext);
     const setCommonArray = useContext(CommonArrayUpdateContext);
-    const { type } = props
+    const { type, setButtonVisible, isDropdownVisible, setDropdownVisible} = props; // Access the setDropdownVisible prop
     const arr = commonArray.filter((task) => task.status === type);
-
     const handleSelectChange = (event) => {
         const selectedTaskTitle = event.target.value;
         if (selectedTaskTitle === '') return;
-        let selectedTask = arr.find((task) => task.title === selectedTaskTitle);
-        const newTasks = arr.filter((task) => task.id !== selectedTask.id);
-        
+
+        const taskList = commonArray.filter((task) => task.status === type);
+
+        let selectedTask = taskList.find((task) => task.title === selectedTaskTitle);
+        let newTasks = commonArray.filter((task) => task.id !== selectedTask.id);
+
         let newStatus;
         switch (selectedTask.status) {
             case LIST_TYPES.BACKLOG:
@@ -28,19 +30,24 @@ const DropdownList = props => {
             case LIST_TYPES.IN_PROGRESS:
                 newStatus = LIST_TYPES.DONE
                 break;
+            default:
+                break;
         }
-        selectedTask.status = newStatus;        
-        setCommonArray(newTasks => [...newTasks, selectedTask]);
-    };
-
+        selectedTask.status = newStatus;
+        setCommonArray([...newTasks, selectedTask]);
+        setButtonVisible(true);
+        setDropdownVisible(false);};
+    if (arr.length === 0 || !isDropdownVisible) {
+        return null; // Return null to hide the component
+      }
     return (
-        <select name="dropdown" onChange={handleSelectChange}>
-            <option value=''></option>
-            {arr.map(task => {
-                return (
-                    <option key={task.id} value={task.title} >{task.title}</option>
-                )
-            })}
+        <select onChange={handleSelectChange}>
+            <option value=""></option>
+            {arr.map((task) => (
+                <option key={task.id} value={task.title}>
+                    {task.title}
+                </option>
+            ))}
         </select>
     )
 }

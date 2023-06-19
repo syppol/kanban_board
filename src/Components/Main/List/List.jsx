@@ -12,20 +12,20 @@ const List = props => {
     const { type, title, tasks, addNewTask } = props;
     const [isFormVisible, setFormVisible] = useState(false);
     const [isButtonVisible, setButtonVisible] = useState(true);
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
+
 
     const handleAddNewClick = () => {
         setFormVisible(!isFormVisible);
         setButtonVisible(!isButtonVisible);
+        setDropdownVisible(true);
+
     }
 
     const formSubmit = (title) => {
         addNewTask(title)
 
         setFormVisible(false)
-        setButtonVisible(!isButtonVisible)
-    }
-
-    const filterTasks = (tasks) => {
         setButtonVisible(!isButtonVisible)
     }
 
@@ -41,14 +41,38 @@ const List = props => {
             {type === LIST_TYPES.BACKLOG && isFormVisible && (
                 <AddNewTaskForm tasks={tasks} formSubmit={formSubmit} />
             )}
-            {type === LIST_TYPES.READY && isFormVisible && (
-                <DropdownList type={LIST_TYPES.BACKLOG}/>
+            {type === LIST_TYPES.READY && isDropdownVisible && (
+                <DropdownList
+                    onSelect={() => {
+                        setButtonVisible(!isButtonVisible)
+                    }} // Set button visibility when an option is selected
+                    type={LIST_TYPES.BACKLOG}
+                    setButtonVisible={setButtonVisible}
+                    isDropdownVisible={isDropdownVisible}
+                    setDropdownVisible={setDropdownVisible}
+                />
             )}
-            {type === LIST_TYPES.IN_PROGRESS && isFormVisible && (
-                <DropdownList type={LIST_TYPES.READY} />
+            {type === LIST_TYPES.IN_PROGRESS && isDropdownVisible && (
+                <DropdownList
+                    onSelect={() => {
+                        setButtonVisible(!isButtonVisible)
+                    }} // Set button visibility when an option is selected
+                    type={LIST_TYPES.READY}
+                    setButtonVisible={setButtonVisible}
+                    isDropdownVisible={isDropdownVisible}
+                    setDropdownVisible={setDropdownVisible}
+                />
             )}
-            {type === LIST_TYPES.DONE && isFormVisible && (
-                <DropdownList type={LIST_TYPES.IN_PROGRESS} />
+            {type === LIST_TYPES.DONE && isDropdownVisible && (
+                <DropdownList
+                    onSelect={() => {
+                        setButtonVisible(!isButtonVisible)
+                    }} // Set button visibility when an option is selected
+                    type={LIST_TYPES.IN_PROGRESS}
+                    setButtonVisible={setButtonVisible}
+                    isDropdownVisible={isDropdownVisible}
+                    setDropdownVisible={setDropdownVisible}
+                />
             )}
 
 
