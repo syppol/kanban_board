@@ -43,7 +43,8 @@ const List = props => {
             default:
                 break;
         }
-        let currentTasks = commonArray.filter(task => task.status === watchedType);
+        const commonArr = commonArray;
+        let currentTasks = commonArr.filter(task => task.status === watchedType);
         if ((type !== LIST_TYPES.BACKLOG) && (currentTasks.length === 0)){
             return css.addButtonDisabled;
         }

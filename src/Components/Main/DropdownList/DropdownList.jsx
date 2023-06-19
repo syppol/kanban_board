@@ -38,7 +38,7 @@ const DropdownList = (props) => {
         setButtonVisible(true);
         setDropdownVisible(false);};
     if (arr.length === 0 || !isDropdownVisible) {
-        return null; // Return null to hide the component
+        return null;
       }
     return (
         <select onChange={handleSelectChange}>
