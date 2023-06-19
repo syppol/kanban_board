@@ -93,5 +93,3 @@ const List = props => {
 }
 
 export default List;
-
-/* <AddNewTaskForm formSubmit={formSubmit} /> */

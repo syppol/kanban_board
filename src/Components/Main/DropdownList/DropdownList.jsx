@@ -42,7 +42,7 @@ const DropdownList = (props) => {
       }
     return (
         <select onChange={handleSelectChange}>
-            <option value=""></option>
+            <option value="" disabled selected hidden></option>
             {arr.map((task) => (
                 <option key={task.id} value={task.title}>
                     {task.title}

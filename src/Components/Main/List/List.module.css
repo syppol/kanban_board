@@ -1,11 +1,11 @@
 .list {
-	width: 282px;
+    width: 282px;
     height: fit-content;
-	background: #EBECF0;
-	padding: 12px;
-	border-radius: 10px;
-	box-sizing: border-box;
-	margin-right: 24px;
+    background: #EBECF0;
+    padding: 12px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-right: 24px;
     margin-bottom: 50px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .listTitle {
-	margin-top: 0;
+    margin-top: 0;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -24,31 +24,31 @@
 }
 
 .task {
-	background: #fff;
+    background: #fff;
     font-size: 18px;
     line-height: 21px;
     color: #000000;
-	margin-top: 15px;
-	padding: 7px 8px;
-	border-radius: 5px;
+    margin-top: 15px;
+    padding: 7px 8px;
+    border-radius: 5px;
 }
 
 .task:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .taskLink {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .addButtonActive {
     width: 102px;
     height: 29px;
-	background: none;
-	border: 1px solid #EBECF0;
-	appearance: none;
+    background: none;
+    border: 1px solid #EBECF0;
+    appearance: none;
     padding: 4px;
-	font-size: 18px;
+    font-size: 18px;
     line-height: 21px;
     color: #5E6C84;
     margin-top: 15px;
@@ -61,7 +61,7 @@
     background: #EBECF0;
     border-radius: 5px;
     padding: 4px;
-	color: #8697b5;
+    color: #8697b5;
     box-sizing: border-box;
     margin-top: 15px;
 }
@@ -77,7 +77,7 @@
     background: #fff;
     border-radius: 5px;
     padding: 4px;
-	color: #000000;
+    color: #000000;
     font-size: 18px;
     line-height: 21px;
     /* cursor: pointer;
