@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main'
-import TaskDetails from "./Components/TaskDetails/TaskDetails";
+import TaskDetails from "./Components/Main/TaskDetails/TaskDetails";
 import Footer from './Components/Footer/Footer'
 import { CommonArrayContext, CommonArrayUpdateContext } from './TasksContext';
 

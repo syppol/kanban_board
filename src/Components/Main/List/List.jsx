@@ -46,6 +46,7 @@ const List = props => {
                 break;
         }
         const commonArr = commonArray;
+        if (!commonArr) return css.addButtonDisabled;
         let currentTasks = commonArr.filter(task => task.status === watchedType);
         if ((type !== LIST_TYPES.BACKLOG) && (currentTasks.length === 0)) {
             return css.addButtonDisabled;
@@ -60,7 +61,6 @@ const List = props => {
                 return (
                     <div key={task.id} className={css.task}>
                         <Link to={`/task/${task.id}`}>{task.title}</Link>
-
                     </div>
 
                 )
